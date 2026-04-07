@@ -1,0 +1,92 @@
+:root {
+	/* Colors */
+	--dark-green: #051f20;
+	--mid-green: #0b2b26;
+	--mid-light-green: #163832;
+	--light-green: #235347;
+	--mint-green: #8eb69b;
+	--verylight-green: #daf1de;
+
+	/* Variables sémantiques */
+	--bg-main: var(--dark-green);
+	--bg-card: var(--mid-green);
+	--text-main: var(--verylight-green);
+	--text-muted: var(--mint-green);
+	--accent: var(--light-green);
+	--button-bg: var(--mint-green);
+	--button-text: var(--dark-green);
+
+	/* Font Sizes */
+	--fs-h1: 3rem;
+	--fs-h2: 2.25rem;
+	--fs-h3: 1.75rem;
+	--fs-h4: 1.25rem;
+	--fs-p: 1rem;
+}
+
+/* Light Theme */
+[data-theme="light"] {
+	--bg-main: #f0f7f1;
+	--bg-card: #ffffff;
+	--text-main: var(--mid-green);
+	--text-muted: #2d5a52;
+	--accent: var(--mint-green);
+	--button-bg: var(--mid-light-green);
+	--button-text: var(--verylight-green);
+}
+
+/* Global Styles */
+body {
+	margin: 0;
+	font-family: "montserrat", sans-serif;
+	background-color: var(--bg-main);
+	color: var(--text-main);
+	transition:
+		background-color 0.3s ease,
+		color 0.3s ease;
+}
+
+/* Typography */
+h1 {
+	font-size: var(--fs-h1);
+	font-weight: 700;
+	margin-bottom: 1.5rem;
+}
+h2 {
+	font-size: var(--fs-h2);
+	font-weight: 700;
+	margin-bottom: 1.25rem;
+}
+h3 {
+	font-size: var(--fs-h3);
+	font-weight: 600;
+}
+h4 {
+	font-size: var(--fs-h4);
+	font-weight: 600;
+}
+p {
+	font-size: var(--fs-p);
+	line-height: 1.6;
+	color: var(--text-muted);
+}
+
+/* Buttons */
+
+.btn {
+	display: inline-block;
+	padding: 0.75rem 1.5rem;
+	border-radius: 0.5rem;
+	border: none;
+	font-family: "montserrat", sans-serif;
+	font-weight: 500;
+	cursor: pointer;
+	background-color: var(--button-bg);
+	color: var(--button-text);
+	transition: all 0.2s ease;
+}
+
+.btn:hover {
+	opacity: 0.9;
+	transform: translateY(-2px);
+}

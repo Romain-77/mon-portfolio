@@ -1,0 +1,17 @@
+{
+	"devDependencies": {
+		"@biomejs/biome": "2.4.10",
+		"@types/cors": "^2.8.19",
+		"concurrently": "^9.2.1"
+	},
+	"scripts": {
+		"dev": "concurrently \"npm run dev --prefix client\" \"npm run dev --prefix server\"",
+		"format": "npx @biomejs/biome format --write ."
+	},
+	"dependencies": {
+		"cors": "^2.8.6",
+		"css": "^3.0.0",
+		"intellisense": "^0.0.1",
+		"tailwind": "^4.0.0"
+	}
+}
