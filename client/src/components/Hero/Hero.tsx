@@ -14,11 +14,6 @@ export default function Hero({ message }: HeroProps) {
 				<h2 className="hero-subtitle animate-in delay-1">Développeur Web</h2>
 				<p className="hero-description animate-in delay-2">
 					Je crée des solutions numériques robustes et élégantes.
-					<br />
-					{/* Actuellement connecté au serveur :{" "}
-					<code className="api-status">
-						{message || "Connexion en cours..."}
-					</code> */}
 				</p>
 			</div>
 		</section>

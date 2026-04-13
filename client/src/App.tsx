@@ -1,25 +1,18 @@
 import { useEffect, useState } from "react";
-import About from "./components/About/About";
-import Contact from "./components/Contact/Contact";
-import Hero from "./components/Hero/Hero";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar";
-import Projects from "./components/Projects/Projects";
 import ScrollIndicator from "./components/ScrollIndicator/ScrollIndiactor";
+import ScrollLine from "./components/ScrollLine/ScrollLine";
+import Home from "./pages/Home";
+import ProjectDetails from "./pages/ProjectDetails";
 import "./App.css";
 
 function App() {
-	const [message, setMessage] = useState("");
+	const [message] = useState("");
 	const [isLightMode, setIsLightMode] = useState(() => {
 		const savedTheme = localStorage.getItem("portfolio-theme");
 		return savedTheme === "light";
 	});
-
-	useEffect(() => {
-		fetch("http://localhost:3001/api/hello")
-			.then((response) => response.json())
-			.then((data) => setMessage(data.message))
-			.catch((err) => console.error("Erreur API: ", err));
-	}, []);
 
 	useEffect(() => {
 		const theme = isLightMode ? "light" : "dark";
@@ -28,27 +21,23 @@ function App() {
 	}, [isLightMode]);
 
 	return (
-		<>
+		<Router>
 			<Navbar
 				isLightMode={isLightMode}
 				toggleTheme={() => setIsLightMode(!isLightMode)}
 			/>
-			<main>
-				<div id="Accueil">
-					<Hero message={message} />
-				</div>
-				<div id="À propos">
-					<About />
-				</div>
-				<div id="Projets">
-					<Projects />
-				</div>
-				<div id="Contact">
-					<Contact />
-				</div>
-			</main>
+			<ScrollLine />
+
+			<Routes>
+				{/* Route pour la page principale */}
+				<Route path="/" element={<Home message={message} />} />
+
+				{/* Route dynamique pour chaque projet */}
+				<Route path="/projet/:id" element={<ProjectDetails />} />
+			</Routes>
+
 			<ScrollIndicator />
-		</>
+		</Router>
 	);
 }
 
