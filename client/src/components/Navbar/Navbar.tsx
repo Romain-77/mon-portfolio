@@ -1,3 +1,4 @@
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import "./Navbar.css";
 
 interface NavbarProps {
@@ -6,34 +7,45 @@ interface NavbarProps {
 }
 
 export default function Navbar({ isLightMode, toggleTheme }: NavbarProps) {
-	const scrollToSection = (id: string) => {
-		const element = document.getElementById(id);
-		if (element) {
-			element.scrollIntoView({ behavior: "smooth" });
-		}
-	};
+	const navigate = useNavigate();
+	const location = useLocation();
 
-	const handleKeyDown = (e: React.KeyboardEvent, id: string) => {
-		if (e.key === "Enter" || e.key === "") {
-			scrollToSection(id);
+	const handleNavClick = (id: string) => {
+		if (location.pathname === "/") {
+			const element = document.getElementById(id);
+			if (element) {
+				element.scrollIntoView({ behavior: "smooth" });
+			}
+		} else {
+			navigate("/", { state: { targetId: id } });
 		}
 	};
 
 	return (
 		<nav className="navbar animate-in">
-			<div className="nav-logo">
-				RD<span>.</span>
-			</div>
+			{/* Le logo devient un lien vers l'accueil */}
+			<Link
+				to="/"
+				className="nav-logo"
+				style={{ textDecoration: "none", color: "inherit" }}
+			>
+				Romain Debas
+			</Link>
+
 			<div className="nav-right">
 				<ul className="nav-links">
 					{["Accueil", "À propos", "Projets", "Contact"].map((id) => (
 						<li
 							key={id}
-							onClick={() => scrollToSection(id)}
-							onKeyDown={(e) => handleKeyDown(e, id)}
-							aria-label={`Aller à la section ${id}`}
+							onClick={() => handleNavClick(id)}
+							onKeyDown={(e) => {
+								if (e.key === "Enter" || e.key === " ") {
+									handleNavClick(id);
+								}
+							}}
+							style={{ cursor: "pointer" }}
 						>
-							{id.charAt(0).toUpperCase() + id.slice(1)}
+							{id}
 						</li>
 					))}
 				</ul>
