@@ -2,9 +2,9 @@ import { useEffect, useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar";
 import ScrollIndicator from "./components/ScrollIndicator/ScrollIndiactor";
-import ScrollLine from "./components/ScrollLine/ScrollLine";
+
 import Home from "./pages/Home";
-import ProjectDetails from "./pages/ProjectDetails";
+import ProjectDetails from "./pages/ProjectDetails/ProjectDetails";
 import "./App.css";
 
 function App() {
@@ -26,7 +26,6 @@ function App() {
 				isLightMode={isLightMode}
 				toggleTheme={() => setIsLightMode(!isLightMode)}
 			/>
-			<ScrollLine />
 
 			<Routes>
 				{/* Route pour la page principale */}
