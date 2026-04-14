@@ -17,7 +17,19 @@ export default function Projects() {
 								<div className="project-content">
 									<h3>{project.id}</h3>
 									<h4>{project.title}</h4>
-									<p>{project.description}</p>
+									<div className="project-image-container">
+										{project.picture ? (
+											<img
+												src={project.picture}
+												alt={project.id}
+												className="project-card-image"
+											/>
+										) : (
+											<div className="project-image-placeholder">
+												{project.id}
+											</div>
+										)}
+									</div>
 									<div className="project-tech">
 										{project.tech.map((t) => (
 											<span key={t} className="tech-badge">

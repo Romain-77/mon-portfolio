@@ -1,5 +1,5 @@
 .projects-section {
-	padding: 8rem 2rem;
+	padding: 4rem 2rem;
 	background-color: var(--bg-main);
 	display: flex;
 	justify-content: center;
@@ -13,7 +13,7 @@
 
 .projects-title {
 	font-size: 3rem;
-	color: var(--mint-green);
+	color: var(--text-muted);
 	margin-bottom: 4rem;
 	text-align: center;
 }
@@ -21,7 +21,8 @@
 .projects-grid {
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
-	gap: 2.5rem;
+	gap: 3rem;
+	align-items: stretch;
 }
 
 .project-card-link {
@@ -29,23 +30,24 @@
 	color: inherit;
 	display: flex;
 	outline: none;
+	height: 100%;
+	min-height: 100%;
 }
 
 .project-card {
 	background: var(--bg-card);
 	border: 1px solid var(--accent);
 	border-radius: 1.5rem;
-	padding: 2rem;
+	padding: 1.5rem;
 	display: flex;
 	flex-direction: column;
-	justify-content: space-between;
+	width: 100%;
+	justify-content: flex-start;
 	transition:
 		transform 0.3s ease,
 		border-color 0.3s ease,
 		box-shadow 0.3s ease;
 	box-shadow: 0 10px 30px rgba(142, 182, 155, 0.1);
-	position: relative;
-	overflow: hidden;
 }
 
 [data-theme="light"] .project-card {
@@ -68,7 +70,7 @@
 .project-content {
 	display: flex;
 	flex-direction: column;
-	height: 100%;
+	flex-grow: 1;
 }
 
 .project-content h3 {
@@ -97,17 +99,54 @@
 	flex-grow: 1;
 }
 
+.project-image-container {
+	width: 100%;
+	height: auto;
+	overflow: hidden;
+	margin-bottom: 1.5rem;
+	border-radius: 0.8rem;
+	background: transparent;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-shrink: 0;
+}
+
+.project-card-image {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	transition: transform 0.5s ease;
+	padding: 0;
+}
+
+.project-image-placeholder {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: var(--mint-green);
+	font-weight: bold;
+	font-size: 0.9rem;
+	opacity: 0.5;
+
+	border: 1px dashed var(--accent);
+	background: rgba(142, 182, 155, 0.05);
+	border-radius: 0.8rem;
+}
+
 .project-tech {
 	display: flex;
 	flex-wrap: wrap;
 	gap: 0.6rem;
-	margin-bottom: 1rem;
 	margin-top: auto;
+	padding: 1.5rem;
 }
 
 .tech-badge {
 	background: rgba(142, 182, 155, 0.1);
-	color: var(--mint-green);
+	color: var(--text-muted);
 	padding: 0.3rem 0.8rem;
 	border-radius: 6px;
 	font-size: 0.75rem;
@@ -132,11 +171,21 @@
 }
 
 @media (max-width: 900px) {
+	.projects-section {
+		padding: 4rem 1.5rem;
+	}
 	.projects-grid {
 		grid-template-columns: 1fr;
+		gap: 2.5rem;
 	}
-
 	.projects-title {
 		font-size: 2.2rem;
+		margin-bottom: 2.5rem;
+	}
+	.project-image-container {
+		height: 200px;
+	}
+	.project-card {
+		padding: 1.5rem;
 	}
 }
