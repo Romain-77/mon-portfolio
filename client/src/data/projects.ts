@@ -30,7 +30,8 @@ Une attention particulière a été portée à l’ergonomie, à la mise en vale
 			"Multer",
 		],
 		picture: "/EDT/EDT screen.png",
-		video: "/EDT/EDT live.mp4",
+		video:
+			"https://res.cloudinary.com/dmj5xlmz3/video/upload/v1776169352/EDT-live_tewwrn.mp4",
 	},
 	{
 		id: "Druïdolib",

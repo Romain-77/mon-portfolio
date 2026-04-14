@@ -28,7 +28,7 @@ export default function ProjectDetails() {
 							controls
 							muted
 							autoPlay
-							loop
+							preload="metadata"
 							playsInline
 							className="project-video"
 						>
