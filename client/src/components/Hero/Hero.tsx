@@ -7,14 +7,53 @@ interface HeroProps {
 export default function Hero({ message }: HeroProps) {
 	return (
 		<section className="hero-section">
-			<div className="hero-overlay" aria-hidden="true"></div>
+			<div className="hero-bg-container">
+				<img
+					src="/Hero/hero-bg.jpg"
+					alt="hero-background"
+					className="hero-bg-image"
+					aria-hidden="true"
+				/>
+				<div className="hero-vignette"></div>
+			</div>
 
 			<div className="hero-container">
 				<h1 className="hero-title animate-in">Romain DEBAS</h1>
 				<h2 className="hero-subtitle animate-in delay-1">Développeur Web</h2>
 				<p className="hero-description animate-in delay-2">
-					Je crée des solutions numériques robustes et élégantes.
+					De la <strong>précision</strong> de l'interface à la{" "}
+					<strong>robustesse</strong> du backend, je fusionne l'exigence avec la
+					puissance du code pour bâtir des solutions
+					<strong> centrées sur l'excellence.</strong>
 				</p>
+				<div className="social-links animate-in delay-3">
+					<a
+						href="https://github.com/Romain-77"
+						target="_blank"
+						rel="noreferrer"
+						className="social-link"
+					>
+						<img
+							src="/Socials/github.png"
+							alt="Github"
+							className="social-icon"
+						/>
+						<span>GitHub</span>
+					</a>
+					<a
+						href="https://www.linkedin.com/in/romain-debas/"
+						target="_blank"
+						rel="noreferrer"
+						className="social-link"
+					>
+						<img
+							src="/Socials/linkedin.png"
+							alt="Linkedin"
+							className="social-icon"
+						/>
+						<span>LinkedIn</span>
+					</a>
+				</div>
 			</div>
 		</section>
 	);

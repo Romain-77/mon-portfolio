@@ -1,4 +1,5 @@
-import { Link, useNavigate, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { useState } from "react";
 import "./Navbar.css";
 
 interface NavbarProps {
@@ -9,8 +10,10 @@ interface NavbarProps {
 export default function Navbar({ isLightMode, toggleTheme }: NavbarProps) {
 	const navigate = useNavigate();
 	const location = useLocation();
+	const [isMenuOpen, setIsMenuOpen] = useState(false);
 
 	const handleNavClick = (id: string) => {
+		setIsMenuOpen(false);
 		if (location.pathname === "/") {
 			const element = document.getElementById(id);
 			if (element) {
@@ -23,39 +26,46 @@ export default function Navbar({ isLightMode, toggleTheme }: NavbarProps) {
 
 	return (
 		<nav className="navbar animate-in">
-			{/* Le logo devient un lien vers l'accueil */}
-			<Link
-				to="/"
-				className="nav-logo"
-				style={{ textDecoration: "none", color: "inherit" }}
-			>
-				Romain Debas
-			</Link>
+			<div className="nav-container">
+				<Link to="/" className="nav-logo" onClick={() => setIsMenuOpen(false)}>
+					Romain Debas
+				</Link>
 
-			<div className="nav-right">
-				<ul className="nav-links">
-					{["Accueil", "À propos", "Projets", "Contact"].map((id) => (
-						<li
-							key={id}
-							onClick={() => handleNavClick(id)}
-							onKeyDown={(e) => {
-								if (e.key === "Enter" || e.key === " ") {
-									handleNavClick(id);
-								}
-							}}
-							style={{ cursor: "pointer" }}
+				<div className="nav-right">
+					<ul className={`nav-links ${isMenuOpen ? "active" : ""}`}>
+						{["Accueil", "À propos", "Projets", "Contact"].map((id) => (
+							<li key={id}>
+								<button
+									type="button"
+									className="nav-item-btn"
+									onClick={() => handleNavClick(id)}
+								>
+									{id}
+								</button>
+							</li>
+						))}
+					</ul>
+					<div className="nav-actions">
+						<button
+							type="button"
+							className="theme-toggle-btn"
+							onClick={toggleTheme}
+							aria-label="changer le thème"
 						>
-							{id}
-						</li>
-					))}
-				</ul>
-				<button
-					type="button"
-					className="theme-toggle-btn"
-					onClick={toggleTheme}
-				>
-					{isLightMode ? "🌙" : "☀️"}
-				</button>
+							{isLightMode ? "🌙" : "☀️"}
+						</button>
+						<button
+							type="button"
+							className={`burger-menu ${isMenuOpen ? "open" : ""}`}
+							onClick={() => setIsMenuOpen(!isMenuOpen)}
+							aria-label="menu"
+						>
+							<span></span>
+							<span></span>
+							<span></span>
+						</button>
+					</div>
+				</div>
 			</div>
 		</nav>
 	);

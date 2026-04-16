@@ -6,6 +6,7 @@ import ScrollIndicator from "./components/ScrollIndicator/ScrollIndiactor";
 import Home from "./pages/Home";
 import ProjectDetails from "./pages/ProjectDetails/ProjectDetails";
 import "./App.css";
+import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
 	const [message] = useState("");
@@ -22,6 +23,7 @@ function App() {
 
 	return (
 		<Router>
+			<ScrollToTop />
 			<Navbar
 				isLightMode={isLightMode}
 				toggleTheme={() => setIsLightMode(!isLightMode)}

@@ -17,7 +17,7 @@ export default function ProjectDetails() {
 
 	return (
 		<div className="project-details-container">
-			<Link to="/" className="back-link">
+			<Link to="/" state={{ targetId: "Projets" }} className="back-link">
 				Retour
 			</Link>
 			<header className="project-header">
@@ -40,7 +40,7 @@ export default function ProjectDetails() {
 				<p className="project-describe">{project.description}</p>
 				<p className="stack">Stack</p>
 				<div className="tech-badges-container">
-					{project.fullTechStack?.map((tech) => (
+					{project.fullTechStack.map((tech) => (
 						<span key={tech} className="tech-badge-item">
 							{tech}
 						</span>
