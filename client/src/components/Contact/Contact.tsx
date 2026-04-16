@@ -1,7 +1,9 @@
 import { useState } from "react";
+import { useScrollReveal } from "../../hooks/useScrollReveal";
 import "./Contact.css";
 
 export default function Contact() {
+	useScrollReveal();
 	const [formData, setFormData] = useState({
 		name: "",
 		email: "",
@@ -44,7 +46,7 @@ export default function Contact() {
 	return (
 		<section className="contact-section">
 			<div className="contact-container animate-in">
-				<div className="contact-info">
+				<div className="contact-info reveal reveal-left">
 					<h2>Me contacter</h2>
 					<p>
 						Un projet en tête ou simplement envie d'en apprendre plus sur mon
@@ -56,65 +58,94 @@ export default function Contact() {
 							href="https://github.com/Romain-77"
 							target="_blank"
 							rel="noreferrer"
+							className="social-link"
 						>
-							GitHub
+							<img
+								src="/Socials/github.png"
+								alt="Github"
+								className="social-icon"
+							/>
+							<span className="social-text">GitHub</span>
 						</a>
 						<a
 							href="https://www.linkedin.com/in/romain-debas/"
 							target="_blank"
 							rel="noreferrer"
+							className="social-link"
 						>
-							LinkedIn
+							<img
+								src="/Socials/linkedin.png"
+								alt="Linkedin"
+								className="social-icon"
+							/>
+							<span className="social-text">LinkedIn</span>
 						</a>
 					</div>
 				</div>
 
-				<form className="contact-form" onSubmit={handleSubmit}>
-					<div className="form-group">
-						<label htmlFor="name">Nom</label>
-						<input
-							type="text"
-							id="name"
-							required
-							value={formData.name}
-							onChange={(e) =>
-								setFormData({ ...formData, name: e.target.value })
-							}
-							placeholder="Votre Nom"
-							disabled={isSending}
+				<form
+					className="contact-form reveal reveal-right"
+					onSubmit={handleSubmit}
+				>
+					<div className="card-bg-container">
+						<img
+							src="/Hero/hero-bg.jpg"
+							alt="backgroung-image"
+							className="card-bg-image"
+							aria-hidden="true"
 						/>
 					</div>
-					<div className="form-group">
-						<label htmlFor="email">Email</label>
-						<input
-							type="email"
-							id="email"
-							required
-							value={formData.email}
-							onChange={(e) =>
-								setFormData({ ...formData, email: e.target.value })
-							}
-							placeholder="votre@email.com"
+					<div className="form-content">
+						<div className="form-group">
+							<label htmlFor="name">Nom</label>
+							<input
+								type="text"
+								id="name"
+								required
+								value={formData.name}
+								onChange={(e) =>
+									setFormData({ ...formData, name: e.target.value })
+								}
+								placeholder="Votre Nom"
+								disabled={isSending}
+							/>
+						</div>
+						<div className="form-group">
+							<label htmlFor="email">Email</label>
+							<input
+								type="email"
+								id="email"
+								required
+								value={formData.email}
+								onChange={(e) =>
+									setFormData({ ...formData, email: e.target.value })
+								}
+								placeholder="votre@email.com"
+								disabled={isSending}
+							/>
+						</div>
+						<div className="form-group">
+							<label htmlFor="message">Message</label>
+							<textarea
+								id="message"
+								rows={5}
+								required
+								value={formData.message}
+								onChange={(e) =>
+									setFormData({ ...formData, message: e.target.value })
+								}
+								placeholder="Votre message..."
+								disabled={isSending}
+							></textarea>
+						</div>
+						<button
+							type="submit"
+							className="btn submit-btn"
 							disabled={isSending}
-						/>
+						>
+							{isSending ? "Envoi en cours..." : "Envoyer le message"}
+						</button>
 					</div>
-					<div className="form-group">
-						<label htmlFor="message">Message</label>
-						<textarea
-							id="message"
-							rows={5}
-							required
-							value={formData.message}
-							onChange={(e) =>
-								setFormData({ ...formData, message: e.target.value })
-							}
-							placeholder="Votre message..."
-							disabled={isSending}
-						></textarea>
-					</div>
-					<button type="submit" className="btn submit-btn" disabled={isSending}>
-						{isSending ? "Envoi en cours..." : "Envoyer le message"}
-					</button>
 				</form>
 			</div>
 		</section>

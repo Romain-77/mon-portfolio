@@ -1,19 +1,34 @@
 import { Link } from "react-router-dom";
 import { projectsData } from "../../data/projects";
+import { useScrollReveal } from "../../hooks/useScrollReveal";
 import "./Projects.css";
+
 export default function Projects() {
+	useScrollReveal();
+
 	return (
 		<section className="projects-section">
 			<div className="projects-container">
-				<h2 className="projects-title animate-in">Mes Projets</h2>
+				<h2 className="projects-title reveal reveal-top">Mes Projets</h2>
 				<div className="projects-grid">
-					{projectsData.map((project) => (
+					{projectsData.map((project, index) => (
 						<Link
 							to={`/projet/${project.id}`}
-							className="project-card-link"
+							className={`project-card-link reveal ${
+								index % 2 === 0 ? "reveal-left" : "reveal-right"
+							}`}
 							key={project.id}
 						>
-							<div className="project-card animate-in">
+							<div className="project-card">
+								<div className="card-bg-container">
+									<img
+										src="/Hero/hero-bg.jpg"
+										alt="background-image"
+										className="card-bg-image"
+										aria-hidden="true"
+									/>
+								</div>
+
 								<div className="project-content">
 									<h3>{project.id}</h3>
 									<h4>{project.title}</h4>
@@ -31,7 +46,8 @@ export default function Projects() {
 										)}
 									</div>
 									<div className="project-tech">
-										{project.tech.map((t) => (
+										<h5>Stacks</h5>
+										{project.tech.slice(0, 4).map((t) => (
 											<span key={t} className="tech-badge">
 												{t}
 											</span>

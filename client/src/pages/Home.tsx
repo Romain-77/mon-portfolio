@@ -13,19 +13,21 @@ export default function Home({ message }: { message: string }) {
 	const location = useLocation();
 
 	useEffect(() => {
-		// On "cast" l'état avec notre interface au lieu de 'any'
 		const state = location.state as LocationState;
 
 		if (state?.targetId) {
-			const id = state.targetId;
-			const element = document.getElementById(id);
-			if (element) {
-				setTimeout(() => {
-					element.scrollIntoView({ behavior: "smooth" });
-				}, 100);
-			}
-			// Optionnel : on nettoie l'état pour éviter de scroller à chaque refresh
-			window.history.replaceState({}, document.title);
+			const targetId = state.targetId;
+
+			const timer = setTimeout(() => {
+				const element = document.getElementById(targetId);
+				if (element) {
+					element.scrollIntoView({ behavior: "auto" });
+
+					window.history.replaceState({}, document.title);
+				}
+			}, 50);
+
+			return () => clearTimeout(timer);
 		}
 	}, [location]);
 

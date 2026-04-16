@@ -1,3 +1,7 @@
+* {
+	box-sizing: border-box;
+}
+
 :root {
 	/* Colors */
 	--dark-green: #051f20;
@@ -15,6 +19,7 @@
 	--accent: var(--light-green);
 	--button-bg: var(--mint-green);
 	--button-text: var(--dark-green);
+	--icon-filter: brightness(0) invert(1);
 
 	/* Font Sizes */
 	--fs-h1: 3rem;
@@ -33,6 +38,8 @@
 	--accent: var(--mint-green);
 	--button-bg: var(--mid-light-green);
 	--button-text: var(--verylight-green);
+	--icon-filter: brightness(9) invert(1);
+	--bg-navbar: rgba(240, 247, 241, 0.8);
 }
 
 /* Global Styles */
