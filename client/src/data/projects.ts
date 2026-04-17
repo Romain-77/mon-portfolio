@@ -11,6 +11,17 @@ export interface Project {
 
 export const projectsData: Project[] = [
 	{
+		id: "EOS",
+		title: "Journal de bord personnel et gestion du bien-être",
+		description: `EOS est une application dédiée au suivi du bien-être et à l’introspection quotidienne, conçue pour offrir un espace personnel apaisant et structuré. Le projet permet aux utilisateurs de consigner leurs pensées, suivre leurs humeurs et explorer leurs états d’âme à travers une interface douce et immersive.
+
+Une attention particulière a été portée à l’expérience utilisateur, à la clarté des interactions et à l’ambiance visuelle, favorisant la sérénité et la réflexion. Ce projet illustre la capacité à concevoir un outil centré sur l’humain, alliant design émotionnel, simplicité d’usage et accompagnement dans le développement personnel.`,
+		tech: ["React", "Node.js", "Express", "MySQL", "JWT", "Chart.js"],
+		fullTechStack: [],
+		picture: "/EOS/EOS screen.png",
+		video: "",
+	},
+	{
 		id: "L'Écrin du Temps",
 		title: "Plateforme de vente de montres de luxe d'occasion",
 		description: `L'Écrin du Temps est une plateforme e-commerce dédiée aux montres de luxe d’occasion, conçue pour offrir une expérience utilisateur élégante et rassurante. Le projet met en avant des produits d’exception à travers une interface soignée, des fiches détaillées et un système de navigation fluide avec filtres avancés.

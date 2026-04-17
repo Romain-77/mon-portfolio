@@ -44,6 +44,10 @@ const SkillsData = [
 	},
 ];
 
+interface AboutProps {
+	onOpenCV: () => void;
+}
+
 function SkillCard({ title, skills }: { title: string; skills: string[] }) {
 	return (
 		<div className="skill-card">
@@ -67,14 +71,14 @@ function SkillCard({ title, skills }: { title: string; skills: string[] }) {
 	);
 }
 
-export default function About() {
+export default function About({ onOpenCV }: AboutProps) {
 	useScrollReveal();
 
 	return (
 		<section className="about-section">
+			<h2 className="reveal">À propos de moi</h2>
 			<div className="about-container">
 				<div className="about-text reveal reveal-left">
-					<h2>À propos de moi</h2>
 					<p>
 						Après une carrière de <strong>manager dans le luxe</strong> et une
 						expérience enrichissante dans le <strong>tourisme</strong>, j'ai
@@ -100,6 +104,11 @@ export default function About() {
 						seulement fonctionnelles, mais pensées pour l'expérience utilisateur
 						et la performance métier.
 					</p>
+					<div className="about-actions">
+						<button type="button" className="about-cv-btn" onClick={onOpenCV}>
+							Consulter mon CV
+						</button>
+					</div>
 				</div>
 				<div className="skills-grid reveal reveal-right">
 					{SkillsData.map((item) => (

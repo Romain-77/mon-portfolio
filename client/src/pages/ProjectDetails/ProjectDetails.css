@@ -9,7 +9,7 @@
 
 .back-link {
 	align-self: flex-start;
-	color: var(--mint-green);
+	color: var(--text-main);
 	text-decoration: none;
 	font-weight: 500;
 	font-size: 0.9rem;

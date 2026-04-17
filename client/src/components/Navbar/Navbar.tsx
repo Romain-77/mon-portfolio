@@ -5,15 +5,24 @@ import "./Navbar.css";
 interface NavbarProps {
 	isLightMode: boolean;
 	toggleTheme: () => void;
+	onOpenCV: () => void;
 }
 
-export default function Navbar({ isLightMode, toggleTheme }: NavbarProps) {
+export default function Navbar({
+	isLightMode,
+	toggleTheme,
+	onOpenCV,
+}: NavbarProps) {
 	const navigate = useNavigate();
 	const location = useLocation();
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
 
 	const handleNavClick = (id: string) => {
 		setIsMenuOpen(false);
+		if (id === "Mon CV") {
+			onOpenCV();
+			return;
+		}
 		if (location.pathname === "/") {
 			const element = document.getElementById(id);
 			if (element) {
@@ -33,17 +42,19 @@ export default function Navbar({ isLightMode, toggleTheme }: NavbarProps) {
 
 				<div className="nav-right">
 					<ul className={`nav-links ${isMenuOpen ? "active" : ""}`}>
-						{["Accueil", "À propos", "Projets", "Contact"].map((id) => (
-							<li key={id}>
-								<button
-									type="button"
-									className="nav-item-btn"
-									onClick={() => handleNavClick(id)}
-								>
-									{id}
-								</button>
-							</li>
-						))}
+						{["Accueil", "À propos", "Mon CV", "Projets", "Contact"].map(
+							(id) => (
+								<li key={id}>
+									<button
+										type="button"
+										className="nav-item-btn"
+										onClick={() => handleNavClick(id)}
+									>
+										{id}
+									</button>
+								</li>
+							),
+						)}
 					</ul>
 					<div className="nav-actions">
 						<button
@@ -60,6 +71,7 @@ export default function Navbar({ isLightMode, toggleTheme }: NavbarProps) {
 							onClick={() => setIsMenuOpen(!isMenuOpen)}
 							aria-label="menu"
 						>
+							<span></span>
 							<span></span>
 							<span></span>
 							<span></span>
