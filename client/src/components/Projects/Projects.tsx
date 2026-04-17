@@ -9,7 +9,7 @@ export default function Projects() {
 	return (
 		<section className="projects-section">
 			<div className="projects-container">
-				<h2 className="projects-title reveal reveal-top">Mes Projets</h2>
+				<h2 className="projects-title reveal reveal-top">Projets</h2>
 				<div className="projects-grid">
 					{projectsData.map((project, index) => (
 						<Link
