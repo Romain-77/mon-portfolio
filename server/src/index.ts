@@ -37,7 +37,7 @@ app.use(express.json());
 // ROUTES
 
 app.post(
-	"*",
+	"/api/contact",
 	contactLimiter,
 	[
 		body("name").trim().escape().notEmpty().withMessage("Nom requis"),
