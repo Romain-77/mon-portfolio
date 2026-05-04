@@ -9,7 +9,6 @@ import "./App.css";
 import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
-	const [message] = useState("");
 	const [isCVOpen, setIsCVOpen] = useState(false);
 	const [isLightMode, setIsLightMode] = useState(() => {
 		const savedTheme = localStorage.getItem("portfolio-theme");
@@ -33,12 +32,7 @@ function App() {
 
 			<Routes>
 				{/* Route pour la page principale */}
-				<Route
-					path="/"
-					element={
-						<Home message={message} onOpenCV={() => setIsCVOpen(true)} />
-					}
-				/>
+				<Route path="/" element={<Home onOpenCV={() => setIsCVOpen(true)} />} />
 
 				{/* Route dynamique pour chaque projet */}
 				<Route path="/projet/:id" element={<ProjectDetails />} />
