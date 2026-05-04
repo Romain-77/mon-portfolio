@@ -13,19 +13,19 @@ export const projectsData: Project[] = [
 	{
 		id: "EOS",
 		title: "Journal de bord personnel et gestion du bien-être",
-		description: `EOS est une application dédiée au suivi du bien-être et à l’introspection quotidienne, conçue pour offrir un espace personnel apaisant et structuré. Le projet permet aux utilisateurs de consigner leurs pensées, suivre leurs humeurs et explorer leurs états d’âme à travers une interface douce et immersive.
-
-Une attention particulière a été portée à l’expérience utilisateur, à la clarté des interactions et à l’ambiance visuelle, favorisant la sérénité et la réflexion. Ce projet illustre la capacité à concevoir un outil centré sur l’humain, alliant design émotionnel, simplicité d’usage et accompagnement dans le développement personnel.`,
+		description: `EOS est une application dédiée au bien-être et à l’introspection quotidienne. Elle permet de suivre ses humeurs, consigner ses pensées et évoluer dans une interface pensée pour être apaisante et intuitive.
+Ce projet met l’accent sur l’expérience utilisateur, la clarté des interactions et une utilisation simple et agréable au quotidien.`,
 		tech: ["React", "Node.js", "Express", "MySQL", "JWT", "Chart.js"],
 		fullTechStack: [],
 		picture: "/EOS/EOS screen.png",
-		video: "",
+		video:
+			"https://res.cloudinary.com/dmj5xlmz3/video/upload/q_auto/f_auto/v1777882848/EOS-live_cvgysq.mov",
 	},
 	{
 		id: "L'Écrin du Temps",
 		title: "Plateforme de vente de montres de luxe d'occasion",
-		description: `L'Écrin du Temps est une plateforme e-commerce dédiée aux montres de luxe d’occasion, conçue pour offrir une expérience utilisateur élégante et rassurante. Le projet met en avant des produits d’exception à travers une interface soignée, des fiches détaillées et un système de navigation fluide avec filtres avancés.
-Une attention particulière a été portée à l’ergonomie, à la mise en valeur visuelle des montres et à la structuration du parcours utilisateur, de la découverte produit jusqu’à la gestion de compte. Ce projet illustre la capacité à concevoir une plateforme complète, alliant exigences techniques et design haut de gamme.`,
+		description: `L’Écrin du Temps est une plateforme e-commerce spécialisée dans les montres de luxe d’occasion. Le projet propose une expérience élégante et fluide, avec une navigation optimisée, des filtres avancés et une mise en valeur soignée des produits.
+Réalisé en 2 mois, ce projet illustre la création d’une plateforme complète alliant exigence technique et design haut de gamme.`,
 		tech: ["React", "Node.js", "Express", "MySQL", "JWT", "Chart.js"],
 		fullTechStack: [
 			"React",
@@ -49,9 +49,8 @@ Une attention particulière a été portée à l’ergonomie, à la mise en vale
 	{
 		id: "Druïdolib",
 		title: "Application de druides et particuliers",
-		description: `Druïdolib est un projet réalisé en 48h lors d’un hackathon, basé sur un concept original : transposer une technologie moderne dans une autre époque. Inspirée de Doctolib, l’application imagine un service de prise de rendez‑vous au Moyen Âge, mettant en relation druides, sorcières, mages et chamans avec leurs clients.
-L’application propose un système de profils, de réservation et d’interactions entre utilisateurs, le tout dans un univers immersif et décalé. Une fonctionnalité clé du projet est le changement de thème dynamique : en plus de modifier l’apparence visuelle, celui‑ci transforme entièrement le contenu de l’application, permettant de basculer entre un mode 'guérison' et un mode 'malédiction'.
-Ce projet met en avant la créativité, la rapidité d’exécution et la capacité à concevoir une expérience utilisateur complète dans un temps limité.`,
+		description: `Druïdolib est un projet réalisé en 48h lors d’un hackathon, imaginant une version médiévale de Doctolib. L’application permet de réserver des rendez-vous avec druides, mages ou sorcières dans un univers immersif et décalé.
+Le projet se distingue par son système de thème dynamique, modifiant à la fois l’apparence et le contenu de l’application.`,
 		tech: ["React", "TypeScript", "Vite"],
 		fullTechStack: [
 			"React",
@@ -69,8 +68,8 @@ Ce projet met en avant la créativité, la rapidité d’exécution et la capaci
 	{
 		id: "MoveUp",
 		title: "Application sportive inclusive",
-		description: `MoveUp est une application sportive pensée pour être accessible à tous, quels que soient le niveau, les capacités ou les objectifs. Le projet propose une expérience centrée sur l’utilisateur, avec des parcours personnalisés, un suivi des performances et des fonctionnalités favorisant la motivation.
-Une attention particulière a été portée à l’accessibilité et à la clarté de l’interface, afin de rendre la pratique sportive plus inclusive et engageante. Ce projet met en lumière la capacité à concevoir une application complète en un temps limité, en alliant réflexion produit, expérience utilisateur et cohérence visuelle.`,
+		description: `MoveUp est une application sportive accessible à tous, pensée pour accompagner chaque utilisateur selon son niveau et ses objectifs. Elle propose des parcours personnalisés, un suivi des performances et une interface claire et inclusive.
+Ce projet met en avant une approche centrée utilisateur, mêlant accessibilité, expérience fluide et cohérence visuelle.`,
 		tech: [
 			"React",
 			"Node.js",
@@ -98,8 +97,8 @@ Une attention particulière a été portée à l’accessibilité et à la clart
 	{
 		id: "Neon 808",
 		title: "Label de musique électronique",
-		description: `Neon 808 est un site vitrine dédié à un label de musique électronique, conçu pour refléter une identité visuelle forte inspirée des univers nocturnes et digitaux. Le projet met l’accent sur l’ambiance graphique, les animations et l’immersion, afin de valoriser l’image du label et de ses artistes.
-Pensé comme une vitrine moderne, le site présente les artistes, les projets et l’univers du label à travers une navigation fluide et dynamique. Réalisé en 2 semaines, ce projet illustre une capacité à produire rapidement une interface impactante, avec un travail poussé sur la direction artistique.`,
+		description: `Neon 808 est un site vitrine conçu pour un label de musique électronique. Inspiré des univers nocturnes et digitaux, le projet mise sur une direction artistique forte, des animations immersives et une navigation dynamique.
+Réalisé en 2 semaines, il démontre une capacité à concevoir rapidement une interface moderne et impactante.`,
 		tech: ["HTML5", "CSS3", "JavaScript ES6"],
 		fullTechStack: [
 			"HTML5 Semantic",

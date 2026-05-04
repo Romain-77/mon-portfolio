@@ -21,10 +21,7 @@ export default function Hero({ message }: HeroProps) {
 				<h1 className="hero-title animate-in">Romain DEBAS</h1>
 				<h2 className="hero-subtitle animate-in delay-1">Développeur Web</h2>
 				<p className="hero-description animate-in delay-2">
-					De la <strong>précision</strong> de l'interface à la{" "}
-					<strong>robustesse</strong> du backend, je fusionne l'exigence avec la
-					puissance du code pour bâtir des solutions
-					<strong> centrées sur l'excellence.</strong>
+					RIGUEUR • DESIGN • PERFORMANCE
 				</p>
 				<div className="social-links animate-in delay-3">
 					<a
