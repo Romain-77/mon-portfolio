@@ -98,6 +98,7 @@
 	overflow-wrap: break-word;
 	padding: 0 1rem;
 	box-sizing: border-box;
+	letter-spacing: 0.15rem;
 }
 
 .social-links {
