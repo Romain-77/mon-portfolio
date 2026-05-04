@@ -1,10 +1,6 @@
 import "./Hero.css";
 
-interface HeroProps {
-	message: string;
-}
-
-export default function Hero({ message }: HeroProps) {
+export default function Hero() {
 	return (
 		<section className="hero-section">
 			<div className="hero-bg-container">

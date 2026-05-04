@@ -40,7 +40,7 @@ export default function Home({
 	return (
 		<main>
 			<div id="Accueil">
-				<Hero message={message} />
+				<Hero />
 			</div>
 			<div id="À propos">
 				<About onOpenCV={onOpenCV} />
