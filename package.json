@@ -2,7 +2,10 @@
 	"devDependencies": {
 		"@biomejs/biome": "2.4.10",
 		"@types/cors": "^2.8.19",
-		"concurrently": "^9.2.1"
+		"@types/nodemailer": "^8.0.0",
+		"@vercel/node": "^5.7.15",
+		"concurrently": "^9.2.1",
+		"nodemailer": "^8.0.7"
 	},
 	"engines": {
 		"node": "20.x"
