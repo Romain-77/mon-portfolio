@@ -37,7 +37,7 @@ app.use(express.json());
 // ROUTES
 
 app.post(
-	"/contact",
+	"*",
 	contactLimiter,
 	[
 		body("name").trim().escape().notEmpty().withMessage("Nom requis"),
@@ -79,10 +79,10 @@ app.post(
 		}
 	},
 );
-const PORT = process.env.PORT || 5001;
+// const PORT = process.env.PORT || 5001;
 
-app.listen(PORT, () => {
-	console.log(`Serveur prêt sur le port ${PORT}`);
-});
+// // app.listen(PORT, () => {
+// // 	console.log(`Serveur prêt sur le port ${PORT}`);
+// // });
 
 export default app;

@@ -13,14 +13,14 @@ export default function Contact() {
 	// État pour gérer le chargement et le feedback utilisateur
 	const [isSending, setIsSending] = useState(false);
 
-	const API_BASE_URL = import.meta.env.API_BASE_URL || "";
+	// const API_BASE_URL = import.meta.env.API_BASE_URL || "";
 
 	const handleSubmit = async (e: React.BaseSyntheticEvent) => {
 		e.preventDefault();
 		setIsSending(true);
 
 		try {
-			const response = await fetch(`${API_BASE_URL}/api/contact`, {
+			const response = await fetch("/api/contact", {
 				method: "POST",
 				headers: {
 					"Content-Type": "application/json",
