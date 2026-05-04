@@ -2,7 +2,6 @@ import About from "../components/About/About";
 import Contact from "../components/Contact/Contact";
 import Hero from "../components/Hero/Hero";
 import Projects from "../components/Projects/Projects";
-import Resume from "../components/Resume/Resume";
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
@@ -49,9 +48,6 @@ export default function Home({
 			<div id="Projets">
 				<Projects />
 			</div>
-			{/* <div id="Mon CV">
-				<Resume />
-			</div> */}
 			<div id="Contact">
 				<Contact />
 			</div>

@@ -84,3 +84,5 @@ const PORT = process.env.PORT || 5001;
 app.listen(PORT, () => {
 	console.log(`Serveur prêt sur le port ${PORT}`);
 });
+
+export default app;

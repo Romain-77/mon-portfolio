@@ -1,5 +1,5 @@
-import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useState } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import "./Navbar.css";
 
 interface NavbarProps {

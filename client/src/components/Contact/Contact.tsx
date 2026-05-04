@@ -13,12 +13,15 @@ export default function Contact() {
 	// État pour gérer le chargement et le feedback utilisateur
 	const [isSending, setIsSending] = useState(false);
 
-	const handleSubmit = async (e: React.FormEvent) => {
+	const API_BASE_URL =
+		import.meta.env.VITE_API_BASE_URL || "http://localhost:5001";
+
+	const handleSubmit = async (e: React.BaseSyntheticEvent) => {
 		e.preventDefault();
 		setIsSending(true);
 
 		try {
-			const response = await fetch("http://localhost:5001/api/contact", {
+			const response = await fetch(`${API_BASE_URL}/api/contact`, {
 				method: "POST",
 				headers: {
 					"Content-Type": "application/json",

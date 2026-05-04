@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import CVModal from "./components/CVModa/CVModal";
+import CVModal from "./components/CVModal/CVModal";
 import Navbar from "./components/Navbar/Navbar";
 import ScrollIndicator from "./components/ScrollIndicator/ScrollIndiactor";
 import Home from "./pages/Home";

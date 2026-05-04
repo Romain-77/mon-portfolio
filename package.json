@@ -6,7 +6,8 @@
 	},
 	"scripts": {
 		"dev": "concurrently \"npm run dev --prefix client\" \"npm run dev --prefix server\"",
-		"format": "npx @biomejs/biome format --write ."
+		"format": "npx @biomejs/biome format --write .",
+		"build": "cd client && npm install && npm run build"
 	},
 	"dependencies": {
 		"cors": "^2.8.6",
