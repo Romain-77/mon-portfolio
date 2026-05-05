@@ -16,9 +16,9 @@
 
 .modal-content {
 	background: var(--bg-card);
-	width: 60vh;
-	max-width: 1000px;
+	aspect-ratio: 1 / 1.5;
 	height: 90vh;
+	max-width: 90vw;
 	border-radius: 16px;
 	border: 1px solid var(--bg-main);
 	position: relative;
@@ -27,6 +27,7 @@
 	overflow: hidden;
 	cursor: default;
 	box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+	margin: auto;
 }
 
 .close-btn {
@@ -50,13 +51,13 @@
 }
 
 .cv-viewer {
-	width: 100%;
 	flex-grow: 1;
 	overflow-y: auto;
 	display: flex;
 	justify-content: center;
+	align-items: flex-start;
 	background: #525151c8;
-	padding: 20px 0;
+	padding: 10px;
 }
 .cv-viewer::-webkit-scrollbar {
 	width: 8px;
@@ -69,19 +70,22 @@
 
 .cv-image {
 	width: auto;
-	max-width: 900px;
-	height: auto;
+	height: 100%;
+	object-fit: contain;
 	display: block;
 	box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
 }
 
 .modal-footer {
+	width: auto;
+	min-width: 100%;
 	padding: 15px;
 	display: flex;
 	justify-content: center;
 	background: var(--bg-card);
 	border-top: 1px solid rgba(142, 182, 155, 0.2);
 	z-index: 10;
+	flex-shrink: 0;
 }
 
 .cv-btn.download {
@@ -105,13 +109,26 @@
 @media (max-width: 768px) {
 	.modal-content {
 		width: 95%;
-		height: 90vh;
+		height: auto;
+		max-height: 95vh;
+		aspect-ratio: auto;
+		display: flex;
 	}
 
-	.close-btn {
-		top: 10px;
-		right: 10px;
-		width: 35px;
-		height: 35px;
+	.cv-viewer {
+		display: block;
+		padding: 20px;
+	}
+	.cv-image {
+		width: 100%;
+		height: auto;
+		max-height: none;
+
+		.close-btn {
+			top: 10px;
+			right: 10px;
+			width: 35px;
+			height: 35px;
+		}
 	}
 }

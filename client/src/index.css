@@ -2,6 +2,13 @@
 	box-sizing: border-box;
 }
 
+html,
+body {
+	width: 100%;
+	overflow-x: hidden;
+	position: relative;
+}
+
 :root {
 	/* Colors */
 	--dark-green: #051f20;
