@@ -92,7 +92,8 @@ Ce projet met en avant une approche centrée utilisateur, mêlant accessibilité
 			"CORS",
 		],
 		picture: "/MoveUp/MoveUp screen.png",
-		video: "",
+		video:
+			"https://res.cloudinary.com/dmj5xlmz3/video/upload/v1778508571/MoveUp_live-1_alfpxt.mov",
 	},
 	{
 		id: "Neon 808",
