@@ -67,10 +67,18 @@ app.post(
 			await transporter.sendMail({
 				from: `"${name}" <${email}>`,
 				to: process.env.EMAIL_USER,
-				subject: "Nouveau message Portfolio",
-				html: `<h3>Nouveau contact depuis le portfolio</h3>
-				<p><strong>De:</strong> ${name} (${email})</p>
-				<p><strong>Message:</strong> ${message}</p>`,
+				replyTo: email,
+				subject: `Portfolio - Nouveau message de ${name}`,
+				html: `
+            <div style="font-family: sans-serif; color: #333;">
+                <h3 style="color: #163832;">Nouveau contact depuis le portfolio</h3>
+                <p><strong>Nom :</strong> ${name}</p>
+                <p><strong>Email :</strong> ${email}</p>
+                <hr />
+                <p><strong>Message :</strong></p>
+                <p style="white-space: pre-wrap;">${message}</p>
+            </div>
+        `,
 			});
 			res.status(200).json({ message: "Message envoyé avec succès !" });
 		} catch (error) {
