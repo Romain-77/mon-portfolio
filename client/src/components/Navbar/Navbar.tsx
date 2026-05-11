@@ -63,7 +63,11 @@ export default function Navbar({
 							onClick={toggleTheme}
 							aria-label="changer le thème"
 						>
-							{isLightMode ? "🌙" : "☀️"}
+							{isLightMode ? (
+								<img src="/ThemeIcons/moon.png" alt="Lune" />
+							) : (
+								<img src="/ThemeIcons/sun.png" alt="Soleil" />
+							)}
 						</button>
 						<button
 							type="button"
