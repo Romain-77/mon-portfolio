@@ -169,6 +169,31 @@
 	background: var(--bg-card);
 }
 
+.form-group.checkbox-group {
+	flex-direction: row;
+	align-items: flex-start;
+	gap: 12px;
+	margin-top: 0.5rem;
+	margin-bottom: 1.5rem;
+}
+.checkbox-group input[type="checkbox"] {
+	width: 18px;
+	height: 18px;
+	margin: 0;
+	margin-top: 2px;
+	cursor: pointer;
+	flex-shrink: 0;
+}
+
+.checkbox-group label {
+	color: var(--text-main);
+	font-size: 0.85rem;
+	line-height: 1.4;
+	font-weight: 500;
+	cursor: pointer;
+	user-select: none;
+}
+
 .submit-btn {
 	width: 100%;
 	padding: 1rem;
@@ -189,6 +214,21 @@
 }
 [data-theme="dark"] .submit-btn {
 	box-shadow: 0 5px 15px rgba(142, 182, 155, 0.2);
+}
+
+.submit-btn:disabled {
+	background-color: #4a4a4a;
+	color: #888888;
+	cursor: not-allowed;
+	transform: none;
+	filter: none;
+	box-shadow: none;
+	opacity: 0.6;
+}
+
+.submit-btn:disabled:hover {
+	transform: none;
+	filter: none;
 }
 
 @media (max-width: 850px) {

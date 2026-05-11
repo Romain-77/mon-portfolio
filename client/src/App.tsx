@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import CVModal from "./components/CVModal/CVModal";
+import LegalModal from "./components/LegalModal/LegalModal";
 import Navbar from "./components/Navbar/Navbar";
 import ScrollIndicator from "./components/ScrollIndicator/ScrollIndiactor";
 import Home from "./pages/Home";
@@ -10,6 +11,7 @@ import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
 	const [isCVOpen, setIsCVOpen] = useState(false);
+	const [isLegalOpen, setIsLegalOpen] = useState(false);
 	const [isLightMode, setIsLightMode] = useState(() => {
 		const savedTheme = localStorage.getItem("portfolio-theme");
 		return savedTheme === "light";
@@ -32,12 +34,21 @@ function App() {
 
 			<Routes>
 				{/* Route pour la page principale */}
-				<Route path="/" element={<Home onOpenCV={() => setIsCVOpen(true)} />} />
+				<Route
+					path="/"
+					element={
+						<Home
+							onOpenCV={() => setIsCVOpen(true)}
+							onOpenLegal={() => setIsLegalOpen(true)}
+						/>
+					}
+				/>
 
 				{/* Route dynamique pour chaque projet */}
 				<Route path="/projet/:id" element={<ProjectDetails />} />
 			</Routes>
 			<CVModal isOpen={isCVOpen} onClose={() => setIsCVOpen(false)} />
+			<LegalModal isOpen={isLegalOpen} onClose={() => setIsLegalOpen(false)} />
 
 			<ScrollIndicator />
 		</Router>

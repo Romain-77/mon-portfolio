@@ -1,15 +1,20 @@
-import { useEffect } from "react";
-import { useLocation } from "react-router-dom";
 import About from "../components/About/About";
 import Contact from "../components/Contact/Contact";
 import Hero from "../components/Hero/Hero";
 import Projects from "../components/Projects/Projects";
+import Footer from "../components/Footer/Footer";
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 
 interface LocationState {
 	targetId?: string;
 }
+interface HomeProps {
+	onOpenCV: () => void;
+	onOpenLegal: () => void;
+}
 
-export default function Home({ onOpenCV }: { onOpenCV: () => void }) {
+export default function Home({ onOpenCV, onOpenLegal }: HomeProps) {
 	const location = useLocation();
 
 	useEffect(() => {
@@ -44,6 +49,9 @@ export default function Home({ onOpenCV }: { onOpenCV: () => void }) {
 			</div>
 			<div id="Contact">
 				<Contact />
+			</div>
+			<div id="Footer">
+				<Footer onOpenLegal={onOpenLegal} />
 			</div>
 		</main>
 	);

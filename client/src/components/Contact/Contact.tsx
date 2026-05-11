@@ -8,12 +8,11 @@ export default function Contact() {
 		name: "",
 		email: "",
 		message: "",
+		acceptTerms: false,
 	});
 
 	// État pour gérer le chargement et le feedback utilisateur
 	const [isSending, setIsSending] = useState(false);
-
-	// const API_BASE_URL = import.meta.env.API_BASE_URL || "";
 
 	const handleSubmit = async (e: React.BaseSyntheticEvent) => {
 		e.preventDefault();
@@ -33,7 +32,7 @@ export default function Contact() {
 			if (response.ok) {
 				alert("✅ Merci ! Votre message a bien été envoyé.");
 				// On vide le formulaire après succès
-				setFormData({ name: "", email: "", message: "" });
+				setFormData({ name: "", email: "", message: "", acceptTerms: false });
 			} else {
 				alert(`❌ Erreur : ${data.message || "Une erreur est survenue"}`);
 			}
@@ -140,10 +139,25 @@ export default function Contact() {
 								disabled={isSending}
 							></textarea>
 						</div>
+						<div className="form-group checkbox-group">
+							<input
+								type="checkbox"
+								id="acceptTerms"
+								required
+								checked={formData.acceptTerms}
+								onChange={(e) =>
+									setFormData({ ...formData, acceptTerms: e.target.checked })
+								}
+							/>
+							<label htmlFor="acceptTerms">
+								En cochant cette case, j'acccepte que mes données soient
+								utilisées pour me contacter.
+							</label>
+						</div>
 						<button
 							type="submit"
 							className="btn submit-btn"
-							disabled={isSending}
+							disabled={isSending || !formData.acceptTerms}
 						>
 							{isSending ? "Envoi en cours..." : "Envoyer le message"}
 						</button>

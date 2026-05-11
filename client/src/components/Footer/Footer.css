@@ -1,0 +1,46 @@
+.footer {
+	width: 100%;
+	padding: 2rem 0;
+	background: var(--bg-main);
+	border-top: 1px solid rgba(142, 182, 155, 0.2);
+}
+
+.footer-container {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 0 20px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	gap: 1rem;
+}
+
+footer p {
+	font-size: 0.9rem;
+	color: var(--text-main);
+	margin: 0;
+}
+
+.legal-btn {
+	background: none;
+	border: none;
+	color: var(--text-main);
+	padding: 5px 10px;
+	font-size: 0.95rem;
+	cursor: pointer;
+	transition: all 0.3s ease;
+	text-decoration: underline;
+}
+
+.legal-btn:hover {
+	color: var(--accent);
+	transform: translateY(-2px);
+}
+
+@media (min-width: 768px) {
+	.footer-container {
+		gap: 0.5rem;
+	}
+}
