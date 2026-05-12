@@ -40,14 +40,14 @@ export default function CVModal({ isOpen, onClose }: CVModalProps) {
 				</button>
 				<div className="cv-viewer">
 					<img
-						src="/CV-Romain-Debas.png"
+						src="/CV-DEBAS-Romain.jpg"
 						alt="CV de Romain Debas"
 						className="cv-image"
 					/>
 				</div>
 				<div className="modal-footer">
-					<a href="/CV-Romain-Debas.pdf" download className="cv-btn download">
-						Télécharger le PDF
+					<a href="/CV-DEBAS-Romain.jpg" download className="cv-btn download">
+						Télécharger
 					</a>
 				</div>
 			</div>
