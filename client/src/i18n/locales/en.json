@@ -1,0 +1,26 @@
+{
+	"navbar": {
+		"home": "Home",
+		"about": "About",
+		"resume": "Resume",
+		"projects": "Projects",
+		"contact": "Contact"
+	},
+	"hero": {
+		"subtitle": "Web Developer",
+		"tagline": "RIGOR • DESIGN • PERFORMANCE"
+	},
+	"about": {
+		"title": "About Me",
+		"p1": "After a career as a <0>luxury retail manager</0> and an enriching experience in <1>tourism</1>, I chose to pursue a new challenge by joining <2>Wild Code School</2> for an intensive 5-month bootcamp.",
+		"p2": "This <0>hybrid background</0> is my greatest strength: from my years in luxury, I've kept a keen eye for detail, a drive for excellence, and a deep understanding of client expectations. My management and tourism experience has equipped me with essential soft skills — <1>agility, stress management, and complex problem solving</1> — which I now apply to web development.",
+		"p3": "Today, I combine this <0>operational rigor</0> with my developer skills to build digital solutions that are not just functional, but designed for user experience and business performance.",
+		"btn_cv": "View my Resume",
+		"skills": {
+			"frontend": "Frontend Development",
+			"backend": "Backend & Security",
+			"tools": "Dev Tools",
+			"management": "Design & Management"
+		}
+	}
+}

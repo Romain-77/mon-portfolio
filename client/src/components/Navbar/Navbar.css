@@ -79,7 +79,8 @@
 	color: var(--mint-green);
 }
 
-/* --- BOUTON THEME --- */
+/* --- BOUTON LANGUES ET THEME --- */
+.lang-toggle-btn,
 .theme-toggle-btn {
 	background: var(--bg-card);
 	border: 1px solid var(--accent);
@@ -95,11 +96,13 @@
 	transition: all 0.3s;
 }
 
+.lang-toggle-btn:hover,
 .theme-toggle-btn:hover {
 	border-color: var(--mint-green);
 	transform: scale(1.05);
 }
 
+.lang-toggle-btn img,
 .theme-toggle-btn img {
 	width: 20px;
 	height: 20px;

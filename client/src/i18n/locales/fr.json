@@ -1,0 +1,27 @@
+{
+	"navbar": {
+		"home": "Accueil",
+		"about": "À propos",
+		"resume": "Mon CV",
+		"projects": "Projets",
+		"contact": "Contact"
+	},
+
+	"hero": {
+		"subtitle": "Développeur Web",
+		"tagline": "RIGUEUR • DESIGN • PERFORMANCE"
+	},
+	"about": {
+		"title": "À propos de moi",
+		"p1": "Après une carrière de <0>manager dans le luxe</0> et une expérience enrichissante dans le <1>tourisme</1>, j'ai choisi de m'orienter vers un nouveau challenge en intégrant la <2>Wild Code School</2> pour un bootcamp intensif de 5 mois.",
+		"p2": "Ce <0>parcours hybride</0> est ma plus grande force : de mes années dans le luxe, j'ai gardé le sens du détail, la recherche de l'excellence et une compréhension fine des attentes clients. Mon expérience en management et dans le tourisme m'a doté de compétences transversales essentielles — <1>agilité, gestion du stress et résolution de problèmes complexes</1> — que j'applique désormais au développement web.",
+		"p3": "Aujourd'hui, je compile cette <0>rigueur opérationnelle</0> avec mes compétences de développeur pour bâtir des solutions numériques qui ne sont pas seulement fonctionnelles, mais pensées pour l'expérience utilisateur et la performance métier.",
+		"btn_cv": "Consulter mon CV",
+		"skills": {
+			"frontend": "Frontend Development",
+			"backend": "Backend & Sécurité",
+			"tools": "Outils de Dev",
+			"management": "Design & Gestion"
+		}
+	}
+}

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import "./Navbar.css";
 
@@ -13,13 +14,18 @@ export default function Navbar({
 	toggleTheme,
 	onOpenCV,
 }: NavbarProps) {
+	const { t, i18n } = useTranslation();
 	const navigate = useNavigate();
 	const location = useLocation();
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+	const changeLanguage = (lng: string) => {
+		i18n.changeLanguage(lng);
+	};
+
 	const handleNavClick = (id: string) => {
 		setIsMenuOpen(false);
-		if (id === "Mon CV") {
+		if (id === "Mon CV" || id === "Resume") {
 			onOpenCV();
 			return;
 		}
@@ -33,6 +39,14 @@ export default function Navbar({
 		}
 	};
 
+	const navLinks = [
+		{ id: "Accueil", key: "navbar.home" },
+		{ id: "À propos", key: "navbar.about" },
+		{ id: "Mon CV", key: "navbar.resume" },
+		{ id: "Projets", key: "navbar.projects" },
+		{ id: "Contact", key: "navbar.contact" },
+	];
+
 	return (
 		<nav className="navbar animate-in">
 			<div className="nav-container">
@@ -42,21 +56,41 @@ export default function Navbar({
 
 				<div className="nav-right">
 					<ul className={`nav-links ${isMenuOpen ? "active" : ""}`}>
-						{["Accueil", "À propos", "Mon CV", "Projets", "Contact"].map(
-							(id) => (
-								<li key={id}>
-									<button
-										type="button"
-										className="nav-item-btn"
-										onClick={() => handleNavClick(id)}
-									>
-										{id}
-									</button>
-								</li>
-							),
-						)}
+						{navLinks.map((link) => (
+							<li key={link.id}>
+								<button
+									type="button"
+									className="nav-item-btn"
+									onClick={() => handleNavClick(link.id)}
+								>
+									{t(link.key)}
+								</button>
+							</li>
+						))}
 					</ul>
 					<div className="nav-actions">
+						<button
+							type="button"
+							className="lang-toggle-btn"
+							onClick={() =>
+								changeLanguage(i18n.language === "fr" ? "en" : "fr")
+							}
+							aria-label="changer la langue"
+						>
+							{i18n.language === "fr" ? (
+								<img
+									src="/uk-flag.png"
+									alt="English"
+									title="Switch to English"
+								/>
+							) : (
+								<img
+									src="/fr-flag.png"
+									alt="Français"
+									title="Passer en Français"
+								/>
+							)}
+						</button>
 						<button
 							type="button"
 							className="theme-toggle-btn"

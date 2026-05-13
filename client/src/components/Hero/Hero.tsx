@@ -1,6 +1,9 @@
+import { useTranslation } from "react-i18next";
 import "./Hero.css";
 
 export default function Hero() {
+	const { t } = useTranslation();
+
 	return (
 		<section className="hero-section">
 			<div className="hero-bg-container">
@@ -15,9 +18,11 @@ export default function Hero() {
 
 			<div className="hero-container">
 				<h1 className="hero-title animate-in">Romain DEBAS</h1>
-				<h2 className="hero-subtitle animate-in delay-1">Développeur Web</h2>
+				<h2 className="hero-subtitle animate-in delay-1">
+					{t("hero.subtitle")}
+				</h2>
 				<p className="hero-description animate-in delay-2">
-					RIGUEUR • DESIGN • PERFORMANCE
+					{t("hero.tagline")}
 				</p>
 				<div className="social-links animate-in delay-3">
 					<a
