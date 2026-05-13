@@ -2,14 +2,18 @@ import { Link } from "react-router-dom";
 import { projectsData } from "../../data/projects";
 import { useScrollReveal } from "../../hooks/useScrollReveal";
 import "./Projects.css";
+import { useTranslation } from "react-i18next";
 
 export default function Projects() {
+	const { t } = useTranslation();
 	useScrollReveal();
 
 	return (
 		<section className="projects-section">
 			<div className="projects-container">
-				<h2 className="projects-title reveal reveal-top">Projets</h2>
+				<h2 className="projects-title reveal reveal-top">
+					{t("projects.title")}
+				</h2>
 				<div className="projects-grid">
 					{projectsData.map((project, index) => (
 						<Link
@@ -31,7 +35,7 @@ export default function Projects() {
 
 								<div className="project-content">
 									<h3>{project.id}</h3>
-									<h4>{project.title}</h4>
+									<h4>{t(`projects.items.${project.id}.title`)}</h4>
 									<div className="project-image-container">
 										{project.picture ? (
 											<img
@@ -53,7 +57,7 @@ export default function Projects() {
 											</span>
 										))}
 									</div>
-									<span className="view-more">En savoir plus →</span>
+									<span className="view-more">{t("projects.view_more")}</span>
 								</div>
 							</div>
 						</Link>

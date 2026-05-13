@@ -23,5 +23,36 @@
 			"tools": "Outils de Dev",
 			"management": "Design & Gestion"
 		}
-	}
+	},
+	"projects": {
+		"title": "Projets",
+		"view_more": "En savoir plus →",
+		"back": "Retour",
+		"not_found": "Projet non trouvé",
+		"back_home": "Retour à l'accueil",
+		"stack_title": "Stack",
+		"items": {
+			"EOS": {
+				"title": "Journal de bord personnel et gestion du bien-être",
+				"description": "EOS est une application dédiée au bien-être et à l’introspection quotidienne. Elle permet de suivre ses humeurs, consigner ses pensées et évoluer dans une interface pensée pour être apaisante et intuitive. Ce projet met l’accent sur l’expérience utilisateur, la clarté des interactions et une utilisation simple et agréable au quotidien."
+			},
+			"L'Écrin du Temps": {
+				"title": "Plateforme de vente de montres de luxe d'occasion",
+				"description": "L’Écrin du Temps est une plateforme e-commerce spécialisée dans les montres de luxe d’occasion. Le projet propose une expérience élégante et fluide, avec une navigation optimisée, des filtres avancés et une mise en valeur soignée des produits.\nRéalisé en 2 mois, ce projet illustre la création d’une plateforme complète alliant exigence technique et design haut de gamme."
+			},
+			"Druïdolib": {
+				"title": "Application de druides et particuliers",
+				"description": "Druïdolib est un projet réalisé en 48h lors d’un hackathon, imaginant une version médiévale de Doctolib. L’application permet de réserver des rendez-vous avec druides, mages ou sorcières dans un univers immersif et décalé.\nLe projet se distingue par son système de thème dynamique, modifiant à la fois l’apparence et le contenu de l’application."
+			},
+			"MoveUp": {
+				"title": "Application sportive inclusive",
+				"description": "MoveUp est une application sportive accessible à tous, pensée pour accompagner chaque utilisateur selon son niveau et ses objectifs. Elle propose des parcours personnalisés, un suivi des performances et une interface claire et inclusive.\nCe projet met en avant une approche centrée utilisateur, mêlant accessibilité, expérience fluide et cohérence visuelle."
+			},
+			"Neon 808": {
+				"title": "Label de musique électronique",
+				"description": "Neon 808 est un site vitrine conçu pour un label de musique électronique. Inspiré des univers nocturnes et digitaux, le projet mise sur une direction artistique forte, des animations immersives et une navigation dynamique.\nRéalisé en 2 semaines, il démontre une capacité à concevoir rapidement une interface moderne et impactante."
+			}
+		}
+	},
+	"contact": {}
 }
