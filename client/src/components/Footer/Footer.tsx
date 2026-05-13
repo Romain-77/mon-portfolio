@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import "./Footer.css";
 
 interface FooterProps {
@@ -5,19 +6,22 @@ interface FooterProps {
 }
 
 export default function Footer({ onOpenLegal }: FooterProps) {
+	const { t } = useTranslation();
 	const currentYear = new Date().getFullYear();
 
 	return (
 		<footer className="footer">
 			<div className="footer-container">
-				<p>© {currentYear} Romain Debas. Tous droits réservés.</p>
+				<p>
+					© {currentYear} Romain Debas. {t("footer.rights")}
+				</p>
 				<button
 					type="button"
 					className="legal-btn"
 					onClick={onOpenLegal}
-					aria-label="Ouvrir les mentions légales"
+					aria-label={t("footer.aria_legal")}
 				>
-					Mentions légales
+					{t("footer.legal_link")}
 				</button>
 			</div>
 		</footer>

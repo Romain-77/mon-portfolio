@@ -1,9 +1,11 @@
 import { useState } from "react";
 import { useScrollReveal } from "../../hooks/useScrollReveal";
+import { useTranslation } from "react-i18next";
 import "./Contact.css";
 
 export default function Contact() {
 	useScrollReveal();
+	const { t } = useTranslation();
 	const [formData, setFormData] = useState({
 		name: "",
 		email: "",
@@ -30,15 +32,17 @@ export default function Contact() {
 			const data = await response.json();
 
 			if (response.ok) {
-				alert("✅ Merci ! Votre message a bien été envoyé.");
+				alert(t("contact.alert_success"));
 				// On vide le formulaire après succès
 				setFormData({ name: "", email: "", message: "", acceptTerms: false });
 			} else {
-				alert(`❌ Erreur : ${data.message || "Une erreur est survenue"}`);
+				alert(
+					`${t("contact.alert_error")}${data.message || t("contact.alert_error_default")}`,
+				);
 			}
 		} catch (error) {
 			console.error("Erreur réseau :", error);
-			alert("❌ Le serveur est injoignable. Vérifiez qu'il est bien lancé.");
+			alert(t("contact.alert_server_error"));
 		} finally {
 			setIsSending(false);
 		}
@@ -48,12 +52,8 @@ export default function Contact() {
 		<section className="contact-section">
 			<div className="contact-container animate-in">
 				<div className="contact-info reveal reveal-left">
-					<h2>Me contacter</h2>
-					<p>
-						Un projet en tête ou simplement envie d'en apprendre plus sur mon
-						travail ? N'hésitez pas à m'envoyer un message, je vous répondrai
-						avec plaisir.
-					</p>
+					<h2>{t("contact.title")}</h2>
+					<p>{t("contact.description")}</p>
 					<div className="social-links">
 						<a
 							href="https://github.com/Romain-77"
@@ -98,7 +98,7 @@ export default function Contact() {
 					</div>
 					<div className="form-content">
 						<div className="form-group">
-							<label htmlFor="name">Nom</label>
+							<label htmlFor="name">{t("contact.label_name")}</label>
 							<input
 								type="text"
 								id="name"
@@ -107,12 +107,12 @@ export default function Contact() {
 								onChange={(e) =>
 									setFormData({ ...formData, name: e.target.value })
 								}
-								placeholder="Votre Nom"
+								placeholder={t("contact.placeholder_name")}
 								disabled={isSending}
 							/>
 						</div>
 						<div className="form-group">
-							<label htmlFor="email">Email</label>
+							<label htmlFor="email">{t("contact.label_email")}</label>
 							<input
 								type="email"
 								id="email"
@@ -121,12 +121,12 @@ export default function Contact() {
 								onChange={(e) =>
 									setFormData({ ...formData, email: e.target.value })
 								}
-								placeholder="votre@email.com"
+								placeholder={t("contact.placeholder_email")}
 								disabled={isSending}
 							/>
 						</div>
 						<div className="form-group">
-							<label htmlFor="message">Message</label>
+							<label htmlFor="message">{t("contact.label_message")}</label>
 							<textarea
 								id="message"
 								rows={5}
@@ -135,7 +135,7 @@ export default function Contact() {
 								onChange={(e) =>
 									setFormData({ ...formData, message: e.target.value })
 								}
-								placeholder="Votre message..."
+								placeholder={t("contact.placeholder_message")}
 								disabled={isSending}
 							></textarea>
 						</div>
@@ -149,17 +149,14 @@ export default function Contact() {
 									setFormData({ ...formData, acceptTerms: e.target.checked })
 								}
 							/>
-							<label htmlFor="acceptTerms">
-								En cochant cette case, j'acccepte que mes données soient
-								utilisées pour me contacter.
-							</label>
+							<label htmlFor="acceptTerms">{t("contact.checkbox_terms")}</label>
 						</div>
 						<button
 							type="submit"
 							className="btn submit-btn"
 							disabled={isSending || !formData.acceptTerms}
 						>
-							{isSending ? "Envoi en cours..." : "Envoyer le message"}
+							{isSending ? t("contact.btn_sending") : t("contact.btn_send")}
 						</button>
 					</div>
 				</form>

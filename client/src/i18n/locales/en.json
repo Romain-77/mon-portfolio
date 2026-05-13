@@ -2,7 +2,7 @@
 	"navbar": {
 		"home": "Home",
 		"about": "About",
-		"resume": "Resume",
+		"resume": "My Resume",
 		"projects": "Projects",
 		"contact": "Contact"
 	},
@@ -53,5 +53,40 @@
 			}
 		}
 	},
-	"contact": {}
+	"contact": {
+		"title": "Contact me",
+		"description": "Have a project in mind or just want to learn more about my work? Feel free to send me a message, I will be happy to answer you.",
+		"label_name": "Name",
+		"placeholder_name": "Your Name",
+		"label_email": "Email",
+		"placeholder_email": "your@email.com",
+		"label_message": "Message",
+		"placeholder_message": "Your message...",
+		"checkbox_terms": "By checking this box, I agree that my data may be used to contact me.",
+		"btn_send": "Send message",
+		"btn_sending": "Sending...",
+		"alert_success": "✅ Thank you! Your message has been sent.",
+		"alert_error": "❌ Error: ",
+		"alert_error_default": "An error occurred",
+		"alert_server_error": "❌ Server unreachable."
+	},
+	"footer": {
+		"rights": "All rights reserved.",
+		"legal_link": "Legal Notice",
+		"aria_legal": "Open legal notice"
+	},
+	"legal": {
+		"title": "Legal Notice",
+		"close": "Close",
+		"editor_title": "Publisher",
+		"editor_text": "The website {{url}} is published by:",
+		"residence": "residing in Torcy (77200), France.",
+		"hosting_title": "Hosting",
+		"hosting_text": "The site is hosted by Vercel Inc., located at 340 S Lemon Ave #4133, Walnut, CA 91789, USA.",
+		"ip_title": "Intellectual Property",
+		"ip_text": "The entire site, including text, graphics, logos, and source code, is subject to French and international legislation on copyright and intellectual property. Any reproduction is prohibited without prior agreement.",
+		"rgpd_title": "Personal Data Protection (GDPR)",
+		"rgpd_text": "Data collected via the contact form (Name, Email, Message) is solely intended for Romain DEBAS to respond to contact requests. It is under no circumstances transferred or sold to third parties. In accordance with the 'Informatique et Libertés' law, you can exercise your right of access and deletion by writing to: debasromain@gmail.com.",
+		"cookies_text": "This site does not use any advertising or profiling tracking cookies. Privacy-respecting performance analysis tools (Vercel Analytics) may be used without collecting personal data."
+	}
 }
